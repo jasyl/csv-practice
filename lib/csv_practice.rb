@@ -8,23 +8,21 @@ def get_all_olympic_athletes(filename)
       %w[ID Name Height Team Year City Sport Event Medal].include?(key)
     end
   end
-  return olympic_athlete_subset
+  olympic_athlete_subset
 end
 
 def total_medals_per_team(olympic_data)
   total_medals = Hash.new(0)
   olympic_data.each do |athlete|
-    if athlete["Medal"] != "NA"
-      total_medals[athlete["Team"]] += 1
+    if athlete['Medal'] != 'NA'
+      total_medals[athlete['Team']] += 1
     end
   end
-
-  return total_medals
+  total_medals
 end
 
-
 def get_all_gold_medalists(olympic_data)
-  olympic_data.select do |hash|
-    hash["Medal"] == "Gold"
+  olympic_data.select do |athlete|
+    athlete['Medal'] == 'Gold'
   end
 end
