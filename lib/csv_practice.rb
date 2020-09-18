@@ -22,7 +22,5 @@ def total_medals_per_team(olympic_data)
 end
 
 def get_all_gold_medalists(olympic_data)
-  olympic_data.select do |athlete|
-    athlete['Medal'] == 'Gold'
-  end
+  olympic_data.select { |athlete| athlete['Medal'] == 'Gold'}
 end
